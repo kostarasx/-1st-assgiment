@@ -3,12 +3,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/time.h>
-#include <time.h>
+
 
 #define QUEUESIZE 1000
-#define LOOP 1000
+#define LOOP 50000
 #define P 20
-#define Q 20
+#define Q 120
 
 int priorityNumber = 0;
 long sum = 0;
@@ -85,7 +85,7 @@ int main()
   queueDelete(fifo);
   printf("Sum = %ld\n", sum);
   int avg = sum / (P * LOOP);
-  printf("Average time = %d ms\n", avg);
+  printf("Average time = %d us\n", avg);
   return 0;
 }
 
